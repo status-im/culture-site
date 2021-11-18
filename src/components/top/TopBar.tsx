@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Colors } from '../../constants'
-import { Logo } from './Logo'
+import burger from '../../assets/burger.svg'
 
 export function TopBar() {
   return (
     <Bar>
-      <Logo />
+      <Menu>Menu</Menu>
+      <BurgerBtn>
+        <Icon src={burger} />
+      </BurgerBtn>
     </Bar>
   )
 }
@@ -15,7 +18,25 @@ const Bar = styled.header`
   background-color: ${Colors.White};
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 12px 24px;
+  padding: 24px;
+
+  @media (max-width: 1024px) {
+    padding: 2vw;
+  }
+`
+
+const Menu = styled.p`
+  font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (1440 - 320)));
+  text-transform: uppercase;
+`
+
+const BurgerBtn = styled.button`
+  margin-left: 2vw;
+  padding: 0;
+`
+const Icon = styled.img`
+  width: 48px;
+  height: 48px;
 `
