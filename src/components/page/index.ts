@@ -1,3 +1,3 @@
 export * from './Page'
-export * from './PageContent'
+export * from './Content'
 export * from './Title'
