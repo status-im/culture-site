@@ -2,13 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { Colors } from '../../constants'
 import burger from '../../assets/burger.svg'
+import close from '../../assets/close.svg'
 
-export function TopBar() {
+interface TopBarProps {
+  menuOpened: boolean
+  setMenuOpened: (val: boolean) => void
+}
+
+export function TopBar({ menuOpened, setMenuOpened }: TopBarProps) {
   return (
     <Bar>
-      <Menu>Menu</Menu>
-      <BurgerBtn>
-        <Icon src={burger} />
+      <MenuText>Menu</MenuText>
+      <BurgerBtn onClick={() => setMenuOpened(!menuOpened)}>
+        <Icon src={menuOpened ? close : burger} />
       </BurgerBtn>
     </Bar>
   )
@@ -27,7 +33,7 @@ const Bar = styled.header`
   }
 `
 
-const Menu = styled.p`
+const MenuText = styled.p`
   font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (1440 - 320)));
   text-transform: uppercase;
 `
@@ -35,6 +41,9 @@ const Menu = styled.p`
 const BurgerBtn = styled.button`
   margin-left: 2vw;
   padding: 0;
+  position: relative;
+  z-index: 999;
+  background-color: transparent;
 `
 const Icon = styled.img`
   width: 48px;
