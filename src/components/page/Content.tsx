@@ -4,8 +4,17 @@ import { Colors } from '../../constants'
 export const PageContent = styled.div`
   position: relative;
   background-color: ${Colors.White};
-  margin: 24px auto;
-  max-width: 1000px;
+  margin: 0 auto;
+  max-width: 1072px;
+  padding: 48px 0;
+
+  @media (max-width: 1440px) {
+    padding: 24px;
+  }
+
+  @media (max-width: 769px) {
+    padding: 24px 16px;
+  }
 `
 
 export const MenuContent = styled.div`

@@ -15,29 +15,19 @@ export function Home() {
         </LogoWrapper>
         <Navigation>
           <NavLinks>
-            <NavItem path="party" link="THE PANCULTURISTS Party" sublink="Copy, Read Print" subpath="party/read" />
-            <NavItem path="manifesto" link="OUR MANIFESTO" />
-            <NavItem path="party" link="COMMON POLICIES" />
-            <NavItem
-              path="membership"
-              link="BECOME A MEMBER"
-              sublink="REGULAR OR INDIVIDUAL"
-              subpath="membership/types"
-            />
-            <NavItem
-              path="contribute"
-              link="CONTRIBUTE"
-              sublink="SEE ALL OPEN BOUNTIES"
-              subpath="contribute/bounties"
-            />
-            <NavItem path="press" link="THE PEOPLE’S FREE PRESS" sublink="Copy, Read Print" subpath="press/read" />
-            <NavItem path="assemblies" link="GENERAL ASSEMBLIES" />
-            <NavItem path="wiki" link="WIKIPEDIA" />
-            <NavItem path="board" link="THE BOARD " />
-            <NavItem path="network" link="WHAT IS THE NETWORK STATE?" />
-            <NavItem path="forum" link="DISCUSS FORUM" />
-            <NavItem path="shop" link="THE PEOPLE’S SHOP" sublink="Copy, Read Print" subpath="shop/read" />
-            <NavItem path="calendar" link="CALENDAR & EVENTS" />
+            <NavItem path="example" link="THE PANCULTURISTS Party" sublink="Copy, Read Print" subpath="example/read" />
+            <NavItem path="example" link="OUR MANIFESTO" />
+            <NavItem path="example" link="COMMON POLICIES" />
+            <NavItem path="example" link="BECOME A MEMBER" sublink="REGULAR OR INDIVIDUAL" subpath="example/types" />
+            <NavItem path="example" link="CONTRIBUTE" sublink="SEE ALL OPEN BOUNTIES" subpath="example/bounties" />
+            <NavItem path="example" link="THE PEOPLE’S FREE PRESS" sublink="Copy, Read Print" subpath="example/read" />
+            <NavItem path="example" link="GENERAL ASSEMBLIES" />
+            <NavItem path="example" link="WIKIPEDIA" />
+            <NavItem path="example" link="THE BOARD " />
+            <NavItem path="example" link="WHAT IS THE NETWORK STATE?" />
+            <NavItem path="example" link="DISCUSS FORUM" />
+            <NavItem path="example" link="THE PEOPLE’S SHOP" sublink="Copy, Read Print" subpath="example/read" />
+            <NavItem path="example" link="CALENDAR & EVENTS" />
           </NavLinks>
         </Navigation>
       </MenuContent>
@@ -83,6 +73,10 @@ const NavLinks = styled.ul`
   flex-direction: column;
   color: ${Colors.Black};
   border-bottom: 5px solid ${Colors.Black};
+
+  @media (max-width: 769px) {
+    border-bottom: 3px solid ${Colors.Black};
+  }
 `
 
 const NavBlock = styled.li`
@@ -94,6 +88,10 @@ const NavBlock = styled.li`
 
   @media (max-width: 1024px) {
     padding: 2vw;
+  }
+
+  @media (max-width: 769px) {
+    border-top: 3px solid ${Colors.Black};
   }
 `
 

@@ -82,6 +82,10 @@ const TopLink = styled(Link)`
 const Navigation = styled.nav`
   width: 60%;
   margin-bottom: 124px;
+
+  @media (max-width: 769px) {
+    width: 100%;
+  }
 `
 
 const NavLinks = styled.ul`
@@ -89,6 +93,10 @@ const NavLinks = styled.ul`
   flex-direction: column;
   color: ${Colors.White};
   border-bottom: 5px solid ${Colors.White};
+
+  @media (max-width: 769px) {
+    border-bottom: 3px solid ${Colors.White};
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -99,6 +107,10 @@ const StyledLink = styled(Link)`
   border-top: 5px solid ${Colors.White};
   cursor: pointer;
   padding: 0 24px;
+
+  @media (max-width: 769px) {
+    border-top: 3px solid ${Colors.White};
+  }
 `
 
 const MenuBlock = styled.div`
