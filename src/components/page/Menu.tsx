@@ -11,11 +11,9 @@ export function Menu() {
   return (
     <NavigationMenu>
       <TopNavigation>
-        <TopNavLinks>
-          <TopLink to="/">Home</TopLink>
-          <TopLink to="/support">Support us</TopLink>
-          <Dropdown></Dropdown>
-        </TopNavLinks>
+        <TopLink to="/">Home</TopLink>
+        <TopLink to="/support">Support us</TopLink>
+        <Dropdown></Dropdown>
       </TopNavigation>
       <Navigation>
         <NavLinks>
@@ -63,10 +61,6 @@ const TopNavigation = styled.div`
   width: 100%;
   color: ${Colors.White};
   padding: 24px;
-`
-
-const TopNavLinks = styled.div`
-  display: flex;
 `
 
 const TopLink = styled(Link)`
@@ -131,7 +125,7 @@ const SocialLink = styled.a`
   & + & {
     margin-left: 4vw;
   }
-  
+
   &:hover > svg {
     fill: ${Colors.Gray};
   }
