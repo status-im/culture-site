@@ -12,8 +12,7 @@ export function Page({ children }: Props) {
   return (
     <>
       <TopBar menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
-      {children}
-      {menuOpened && <Menu />}
+      {menuOpened ? <Menu /> : <div>{children}</div>}
     </>
   )
 }
