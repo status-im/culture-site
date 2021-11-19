@@ -124,12 +124,14 @@ const MenuList = styled.ul`
 const SocialLinks = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 `
 const SocialLink = styled.a`
   & + & {
     margin-left: 4vw;
   }
+  
   &:hover > svg {
     fill: ${Colors.Gray};
   }

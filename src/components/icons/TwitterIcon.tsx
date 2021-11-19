@@ -11,7 +11,14 @@ export function TwitterIcon() {
 }
 
 const Icon = styled.svg`
+  width: 48px;
+  height: 48px;
   fill: ${Colors.White};
+
+  @media (max-width: 769px) {
+    width: 32px;
+    height: 32px;
+  }
 
   &:hover {
     fill: ${Colors.Gray};
