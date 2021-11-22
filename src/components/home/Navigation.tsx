@@ -1,26 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { Colors } from '../constants'
-import arrow from '../assets/arrow.svg'
+import { Colors } from '../../constants/styles'
+import arrow from '../../assets/arrow.svg'
+import { useTranslation } from 'react-i18next'
 
 export function Navigation() {
+  const { t, i18n } = useTranslation()
+  
   return (
     <Nav>
       <NavLinks>
-        <NavItem path="example" link="THE PANCULTURISTS Party" sublink="Copy, Read Print" subpath="example/read" />
-        <NavItem path="example" link="OUR MANIFESTO" />
-        <NavItem path="example" link="COMMON POLICIES" />
-        <NavItem path="example" link="BECOME A MEMBER" sublink="REGULAR OR INDIVIDUAL" subpath="example/types" />
-        <NavItem path="example" link="CONTRIBUTE" sublink="SEE ALL OPEN BOUNTIES" subpath="example/bounties" />
-        <NavItem path="example" link="THE PEOPLE’S FREE PRESS" sublink="Copy, Read Print" subpath="example/read" />
-        <NavItem path="example" link="GENERAL ASSEMBLIES" />
-        <NavItem path="example" link="WIKIPEDIA" />
-        <NavItem path="example" link="THE BOARD " />
-        <NavItem path="example" link="WHAT IS THE NETWORK STATE?" />
-        <NavItem path="example" link="DISCUSS FORUM" />
-        <NavItem path="example" link="THE PEOPLE’S SHOP" sublink="Copy, Read Print" subpath="example/read" />
-        <NavItem path="example" link="CALENDAR & EVENTS" />
+        <NavItem path="example" link={t('party')} sublink={t('nav_sub')} subpath="example/read" />
+        <NavItem path="example" link={t('manifesto')} />
+        <NavItem path="example" link={t('policies')} />
+        <NavItem path="example" link={t('membership')} sublink={t('membership_types')} subpath="example/types" />
+        <NavItem path="example" link={t('contribute')} sublink={t('contribute_bounties')} subpath="example/bounties" />
+        <NavItem path="example" link={t('press')} sublink={t('nav_sub')} subpath="example/read" />
+        <NavItem path="example" link={t('assamblies')} />
+        <NavItem path="example" link={t('wiki')} />
+        <NavItem path="example" link={t('board')} />
+        <NavItem path="example" link={t('network')} />
+        <NavItem path="example" link={t('forum')} />
+        <NavItem path="example" link={t('shop')} sublink={t('nav_sub')} subpath="example/read" />
+        <NavItem path="example" link={t('calendar')} />
       </NavLinks>
     </Nav>
   )

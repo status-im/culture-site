@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Colors } from '../../constants/styles'
@@ -6,22 +7,25 @@ import { DiscordIcon } from '../icons/DiscordIcon'
 import { GithubIcon } from '../icons/GithubIcon'
 import { TwitterIcon } from '../icons/TwitterIcon'
 import { MenuContent } from './Content'
+import { LanguageSelector } from './LanguageSelector'
 
 export function Menu() {
+  const { t, i18n } = useTranslation()
+  
   return (
     <NavigationMenu>
       <TopNavigation>
-        <TopLink to="/">Home</TopLink>
-        <TopLink to="/support">Support us</TopLink>
-        <Dropdown></Dropdown>
+        <TopLink to="/">{t('home')}</TopLink>
+        <TopLink to="/support">{t('support')}</TopLink>
+        <LanguageSelector />
       </TopNavigation>
       <Navigation>
         <NavLinks>
-          <StyledLink to="/">WHAT’s ON</StyledLink>
-          <StyledLink to="/">NEWS & PRESS</StyledLink>
-          <StyledLink to="/">JOIN US</StyledLink>
-          <StyledLink to="/">BECOME A MEMBER</StyledLink>
-          <StyledLink to="/">CONTRIBUTE</StyledLink>
+          <StyledLink to="/">{t('whats_on')}</StyledLink>
+          <StyledLink to="/">{t('news')}</StyledLink>
+          <StyledLink to="/">{t('join')}</StyledLink>
+          <StyledLink to="/">{t('membership')}</StyledLink>
+          <StyledLink to="/">{t('contribute')}</StyledLink>
         </NavLinks>
       </Navigation>
       <SocialLinks>
@@ -39,14 +43,6 @@ export function Menu() {
   )
 }
 
-export function Dropdown() {
-  return (
-    <MenuBlock>
-      <MenuList></MenuList>
-    </MenuBlock>
-  )
-}
-
 const NavigationMenu = styled(MenuContent)`
   background-color: ${Colors.Black};
   position: absolute;
@@ -59,6 +55,7 @@ const NavigationMenu = styled(MenuContent)`
 `
 const TopNavigation = styled.div`
   width: 100%;
+  display: flex;
   color: ${Colors.White};
   padding: 24px;
 `
@@ -105,14 +102,6 @@ const StyledLink = styled(Link)`
   @media (max-width: 769px) {
     border-top: 3px solid ${Colors.White};
   }
-`
-
-const MenuBlock = styled.div`
-  width: 100%;
-`
-
-const MenuList = styled.ul`
-  list-style: none;
 `
 
 const SocialLinks = styled.div`
