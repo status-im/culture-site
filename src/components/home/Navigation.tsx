@@ -6,8 +6,8 @@ import arrow from '../../assets/arrow.svg'
 import { useTranslation } from 'react-i18next'
 
 export function Navigation() {
-  const { t, i18n } = useTranslation()
-  
+  const { t } = useTranslation()
+
   return (
     <Nav>
       <NavLinks>

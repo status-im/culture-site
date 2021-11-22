@@ -44,15 +44,15 @@ const SelectButton = styled.button`
   color: ${Colors.White};
   font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (1440 - 320)));
   text-decoration: underline;
-  padding-right: 50px;
+  padding-right: 30px;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 40px;
-    height: 20px;
+    width: 30px;
+    height: 15px;
     transform: translateY(-50%);
     background: url(${arrowDown}) center no-repeat;
     background-size: contain;
