@@ -35,6 +35,10 @@ const SelectWrapper = styled.div`
   position: relative;
   width: 120px;
   color: ${Colors.White};
+
+  @media (max-width: 769px) {
+    width: 80px;
+  }
 `
 
 const SelectButton = styled.button`
@@ -46,6 +50,11 @@ const SelectButton = styled.button`
   text-decoration: underline;
   padding-right: 30px;
 
+  @media (max-width: 769px) {
+    padding-right: 16px;
+    text-align: start;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -56,6 +65,11 @@ const SelectButton = styled.button`
     transform: translateY(-50%);
     background: url(${arrowDown}) center no-repeat;
     background-size: contain;
+
+    @media (max-width: 769px) {
+      width: 20px;
+    height: 10px;
+  }
   }
 
   &.open::after {
@@ -65,7 +79,7 @@ const SelectButton = styled.button`
 
 const SelectContent = styled.ul`
   position: absolute;
-  left: 10px;
+  left: 25px;
   bottom: -12px;
   width: 100%;
   transform: translateY(100%);
@@ -73,6 +87,10 @@ const SelectContent = styled.ul`
   background: ${Colors.Black};
   color: ${Colors.White};
   z-index: 1;
+
+  @media (max-width: 769px) {
+    left: 0;
+  }
 `
 
 const SelectItem = styled.li`

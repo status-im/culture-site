@@ -58,6 +58,11 @@ const TopNavigation = styled.div`
   display: flex;
   color: ${Colors.White};
   padding: 24px;
+
+  @media (max-width: 769px) {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
 `
 
 const TopLink = styled(Link)`
@@ -67,6 +72,10 @@ const TopLink = styled(Link)`
 
   @media (max-width: 1024px) {
     margin-right: 2vw;
+  }
+
+  @media (max-width: 769px) {
+    margin-bottom: 2vw;
   }
 `
 
