@@ -110,6 +110,7 @@ const StyledLink = styled(Link)`
 
   @media (max-width: 769px) {
     border-top: 3px solid ${Colors.White};
+    padding: 0 16px;
   }
 `
 

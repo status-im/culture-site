@@ -37,7 +37,7 @@ const SelectWrapper = styled.div`
   color: ${Colors.White};
 
   @media (max-width: 769px) {
-    width: 80px;
+    width: 60px;
   }
 `
 
