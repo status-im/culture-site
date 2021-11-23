@@ -21,5 +21,9 @@ const LogoWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 24px;
+  margin: -24px 0 100px;
+
+  @media (max-width: 1024px) {
+    margin: -24px 0 10vw;
+  }
 `
