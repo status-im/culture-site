@@ -92,10 +92,10 @@ const NavLinks = styled.ul`
   display: flex;
   flex-direction: column;
   color: ${Colors.White};
-  border-bottom: 5px solid ${Colors.White};
+  border-bottom: 5px solid currentColor;
 
   @media (max-width: 769px) {
-    border-bottom: 3px solid ${Colors.White};
+    border-bottom: 3px solid currentColor;
   }
 `
 
@@ -104,12 +104,12 @@ const StyledLink = styled(Link)`
   color: ${Colors.White};
   font-size: calc(24px + (72 - 24) * ((100vw - 320px) / (1440 - 320)));
   text-transform: uppercase;
-  border-top: 5px solid ${Colors.White};
+  border-top: 5px solid currentColor;
   cursor: pointer;
   padding: 0 24px;
 
   @media (max-width: 769px) {
-    border-top: 3px solid ${Colors.White};
+    border-top: 3px solid currentColor;
     padding: 0 16px;
   }
 `
