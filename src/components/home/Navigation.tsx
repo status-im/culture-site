@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Colors } from '../../constants/styles'
@@ -42,12 +42,27 @@ export function NavItem({ path, link, sublink, subpath }: NavItemProps) {
     subpathname: `/${subpath}`,
   }
 
+  const [elTransform, setElTransform] = useState(0)
+  const [style, setStyle] = useState({})
+
+  const navBlock = useCallback((node) => {
+    if (node !== null) {
+      const width = node.offsetWidth + 40
+      const transform = width - window.innerWidth
+      if (transform > 0) setElTransform(transform)
+    }
+  }, [])
+
   return (
-    <NavBlock>
-      <StyledLink to={location.pathname}>{link}</StyledLink>
-      <Arrow src={arrow} />
-      {sublink && <SubLink to={location.subpathname}>{sublink}</SubLink>}
-    </NavBlock>
+    <NavBlockWrapper>
+      <NavBlock style={style} onMouseEnter={() => setStyle({ transform: `translateX(-${elTransform}px)` })}>
+        <StyledLink to={location.pathname} ref={navBlock}>
+          {link}
+        </StyledLink>
+        <Arrow src={arrow} />
+        {sublink && <SubLink to={location.subpathname}>{sublink}</SubLink>}
+      </NavBlock>
+    </NavBlockWrapper>
   )
 }
 
@@ -62,32 +77,45 @@ const NavLinks = styled.ul`
   border-bottom: 5px solid ${Colors.Black};
 
   @media (max-width: 769px) {
-    border-bottom: 3px solid ${Colors.Black};
+    border-bottom: 3px solid currentColor;
   }
 `
-
-const NavBlock = styled.li`
-  display: flex;
-  align-items: center;
-  border-top: 5px solid ${Colors.Black};
+const NavBlockWrapper = styled.li`
+  border-top: 5px solid currentColor;
   cursor: pointer;
   padding: 24px;
+  white-space: nowrap;
+  overflow: hidden;
 
   @media (max-width: 1024px) {
     padding: 2vw;
   }
 
   @media (max-width: 769px) {
-    border-top: 3px solid ${Colors.Black};
+    border-top: 3px solid currentColor;
   }
+`
+const NavBlock = styled.div`
+  display: flex;
+  align-items: center;
+  transition: transform 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
 `
 
 const StyledLink = styled(Link)`
   position: relative;
   color: ${Colors.Black};
   font-size: calc(24px + (72 - 24) * ((100vw - 320px) / (1440 - 320)));
+  line-height: 1;
   text-transform: uppercase;
   margin-right: 24px;
+
+  @media (min-width: 1440px) {
+    font-size: 72px;
+  }
+
+  @media (max-width: 1024px) {
+    margin-right: 16px;
+  }
 
   @media (max-width: 600px) {
     margin-right: 8px;
@@ -100,13 +128,19 @@ const Arrow = styled.img`
 `
 
 const SubLink = styled(Link)`
-  max-width: 160px;
+  max-width: 200px;
   font-size: calc(12px + (24 - 12) * ((100vw - 320px) / (1440 - 320)));
+  line-height: 1;
   text-transform: uppercase;
   color: ${Colors.Black};
+  white-space: normal;
 
   &:hover {
     text-decoration: underline;
     opacity: 0.7;
+  }
+
+  @media (max-width: 769px) {
+    display: none;
   }
 `

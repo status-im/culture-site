@@ -68,8 +68,8 @@ const SelectButton = styled.button`
 
     @media (max-width: 769px) {
       width: 20px;
-    height: 10px;
-  }
+      height: 10px;
+    }
   }
 
   &.open::after {

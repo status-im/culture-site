@@ -11,7 +11,7 @@ import { LanguageSelector } from './LanguageSelector'
 
 export function Menu() {
   const { t, i18n } = useTranslation()
-  
+
   return (
     <NavigationMenu>
       <TopNavigation>
