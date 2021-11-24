@@ -29,13 +29,13 @@ export function Menu() {
         </NavLinks>
       </Navigation>
       <SocialLinks>
-        <SocialLink href="https://twitter.com" rel="noopener noreferrer">
+        <SocialLink href="https://twitter.com" rel="noopener noreferrer" target="_blank">
           <TwitterIcon />
         </SocialLink>
-        <SocialLink href="https://github.com" rel="noopener noreferrer">
+        <SocialLink href="https://github.com" rel="noopener noreferrer" target="_blank">
           <GithubIcon />
         </SocialLink>
-        <SocialLink href="https://discord.com" rel="noopener noreferrer">
+        <SocialLink href="https://discord.com" rel="noopener noreferrer" target="_blank">
           <DiscordIcon />
         </SocialLink>
       </SocialLinks>
